@@ -1,0 +1,46 @@
+*{
+	margin:0px;
+	padding:0px;
+}
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.text h4{
+	margin-top:20px;
+	margin-left: 30px;
+	font-size: 40px;
+	font-family: 'open sans', sans-serif;
+}
+.column {
+  margin-top: 130px;
+  margin-left: 30px;	
+  float: right;
+  width: 20%;
+  height: 2%;
+  padding: 10px;
+}
+
+.column {
+  margin-top: 130px;	
+  margin-left: 30px;
+  float: right;
+  width: 20%;
+  height:2%;
+  padding: 10px;
+}
+
+.column {
+  margin-top: 130px;
+  margin-left: 30px;	
+  float: right;
+  width: 20%;
+  height: 2%;
+  padding: 10px;
+}
+/* Clear floats after image containers */
+.row::after {
+  
+  
+  display: table;
+}
+
+
+
