@@ -87,11 +87,13 @@ float: left;
   }
 }
 
-.box{
+
+.box1{
   background-color: white;
   opacity: 0.5;
+  width:500px;
   position: relative;
-  margin-left: 20%;
+  margin-left: 32%;
   margin-right: 20%;
   padding-top: 40px;
   padding-bottom: 40px;
@@ -101,6 +103,7 @@ float: left;
   border-radius: 25px;
 }
 
+<<<<<<< Updated upstream
 .slider{
   overflow: hidden;
   
@@ -316,6 +319,21 @@ float: left;
 }
 
 
+.box2{
+  background-color: white;
+  opacity: 0.5;
+  width:500px;
+  height:600px;
+  position: relative;
+  margin-left: 30%;
+  margin-right: 20%;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin-top: -30px;
+  border: solid 1px black;
+  box-shadow: 0px 0px 20px 1px orangered;
+  border-radius: 25px;
+}
 
 
 
