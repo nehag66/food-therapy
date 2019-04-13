@@ -1,7 +1,10 @@
 *{
 	margin:0px;
   padding:0px;
-  height: auto;
+}
+body{
+  max-width: 100%;
+        overflow-x: hidden;
 }
 
 .bgimage{
@@ -317,6 +320,87 @@ float: left;
   float: left;
   cursor: pointer;
 }
+
+
+
+
+
+
+
+
+
+.topnav2 {
+  overflow: hidden;
+  position: inherit;
+  padding-top: 13px;
+  background: transparent;
+ 
+}
+
+.topnav2 a {
+  float: left;
+  color: #f2f2f2;
+  position: relative;
+  border-radius: 5px;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  text-shadow: 2px 2px 2px black;
+}
+
+.topnav2 button{
+  background-color: red;
+  position: relative;
+  color: white;
+  padding: 16px 20px;
+  margin-bottom: 15px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  font-size: 17px;
+  margin-top: -10px;
+  bottom: 25px;
+  right: 28px;
+  width: 100px;
+  border-radius: 10px;
+}
+
+  .topnav2 button:hover {
+      background-color: white;
+      color: black;
+      text-shadow: 2px 2px 2px grey;
+    }
+
+.topnav2 a:hover {
+  background-color: #ddd;
+  color: black;
+  text-shadow: 2px 2px 2px grey;
+}
+
+.topnav2 a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.topnav2 .signup{
+    float: right;
+    position: relative;
+    top: 12;
+    right: 15; 
+    border-radius: 5px;
+    background-color: red;
+    text-shadow: 2px 2px 2px black;
+    font-family: sans-serif;
+}
+.topnav2 .logo{
+  float: left;
+  cursor: pointer;
+}
+
+
+
+
 
 
 .box2{
