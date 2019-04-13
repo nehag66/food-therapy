@@ -1,6 +1,7 @@
 *{
 	margin:0px;
-	padding:0px;
+  padding:0px;
+  height: auto;
 }
 
 .bgimage{
@@ -25,28 +26,6 @@ float: left;
  font-weight: bold;
  font-size: 35px;
  font-family:'montserrat', sans-serif;
-}
-
-.rightmenu{
-	width: 75%;
-	height: 80px;
-    color: white;
-	float: right;
-}
-.rightmenu ul li{
-	margin-left: 80px;
-}
-
-.rightmenu ul li {
- font-family: 'montserrat', sans-serif;
- display: inline-block;
- list-style: none;
- font-size: 35px;
- color: black;
- font-weight: bold;
- line-height: 100px;
- margin-left: 60px;
- text-transform: uppercase;
 }
 
 
@@ -120,6 +99,220 @@ float: left;
   border: solid 1px black;
   box-shadow: 0px 0px 20px 1px orangered;
   border-radius: 25px;
+}
+
+.slider{
+  overflow: hidden;
+  
+}
+.slider figure img
+{
+  float: inherit;
+  width: 10%;
+  height: 300px; 
+  margin-top: 0%; 
+  margin-left: 5px;
+  margin-right: 5px;
+  border-radius: 7px;
+  box-shadow: 3px 2px 5px black; 
+}
+
+.slider figure{
+  position: relative;
+  width: 400%;
+  animation: slide 12s infinite;
+}
+
+@keyframes slide{
+  0%
+  {
+      left:80px;
+      
+  }
+
+  5%
+  {
+      left:80px;
+      
+  }
+
+  10%
+  {
+      left:80px;
+      
+  }
+
+  15%
+  {
+      left:80px;
+      
+  }  
+  
+  20%
+  {
+      left:-430px;
+      
+  }
+
+  25%
+  {
+      left:-430px;
+      
+  }
+
+  30%
+  {
+      left:-430px;
+      
+  }
+
+  35%
+  {
+      left:-430px;
+      
+  }
+
+  40%
+  {
+      left:-950px;
+      
+  }
+
+  45%
+  {
+      left:-950px;
+      
+  }
+
+  50%
+  {
+      left:-950px;
+      
+  }
+
+  55%
+  {
+      left:-950px;
+      
+  }
+  
+  60%
+  {
+      left:-1500px;
+      
+  }
+
+  65%
+  {
+      left:-1500px;
+      
+  }
+
+  70%
+  {
+      left:-1500px;
+      
+  }
+
+  75%
+  {
+      left:-1500px;
+  }
+
+  80%
+  {
+      left:-2100px;
+  }
+
+  85%
+  {
+      left:-2100px;
+  }
+
+  90%
+  {
+      left:-2100px;
+  }
+
+  95%
+  {
+      left:-2100px;
+  }
+
+  100%
+  {
+      left:50px;
+
+  }
+}
+
+.topnav {
+  overflow: hidden;
+  position: inherit;
+  padding-top: 13px;
+  background: transparent;
+ 
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  position: relative;
+  top: 15;
+  border-radius: 5px;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  text-shadow: 2px 2px 2px black;
+}
+
+.topnav button{
+      background-color: red;
+      color: white;
+      padding: 16px 20px;
+      border: none;
+      cursor: pointer;
+      opacity: 0.8;
+      position: fixed;
+      font-size: 17px;
+      bottom: 23px;
+      right: 28px;
+      width: 100px;
+      border-radius: 10px;
+      top: 0px;
+  }
+
+  .topnav button:hover {
+      background-color: white;
+      color: black;
+      text-shadow: 2px 2px 2px grey;
+    }
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+  text-shadow: 2px 2px 2px grey;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.topnav .signup{
+    float: right;
+    position: relative;
+    top: 12;
+    right: 15; 
+    border-radius: 5px;
+    background-color: red;
+    text-shadow: 2px 2px 2px black;
+    font-family: sans-serif;
+}
+.topnav .logo{
+  float: left;
+  cursor: pointer;
 }
 
 
