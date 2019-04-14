@@ -1,20 +1,20 @@
 <html>
 <head>
 	<title></title>
-	<link rel="stylesheet" href="vaibhav.css">
+	<link rel="stylesheet" href="css/css/index.css">
 </head>
-<body background="wallpaper_final.jpg">
+<body background="images/images/wallpaper_final.jpg">
     <div>
         <div class= "menu">
    	        <div class= "leftmenu">
    			        <h2>Foodie Therapy</h2>
             </div>
             <div class="topnav2">
-                   <a href="vaibhav.html">HOME</a>
-                   <a href="gallery.html">MENU</a>
-                   <a href="mycart.html">MY CART</a>
-                   <a href="about_page.html">ABOUT US</a>
-                   <button class="signup"  onclick="location.href='login.html';">SignIn</button>
+                   <a href="index.php">HOME</a>
+                   <a href="gallery.php">MENU</a>
+                   <a href="mycart.php">MY CART</a>
+                   <a href="about_page.php">ABOUT US</a>
+                   <button class="signup"  onclick="location.href='login.php';">SignIn</button>
             </div>
         </div>
 <font size=40>
