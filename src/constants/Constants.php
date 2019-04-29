@@ -6,5 +6,5 @@ class Constants
    const DB_NAME = 'foodtherapy';
    const DB_PORT = 3306;
    const DB_USER = 'root';
-   const DB_PASS = '';
+   const DB_PASS = 'mindfire';
 }
