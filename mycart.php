@@ -22,15 +22,21 @@
 <br>
 <br>
 <h1 align="center"> REVIEW YOUR ORDER </h1> <br> <br>
-<h1 style="margin-left:2em";> ITEMS YOU HAVE SELECTED</h1>
+<h1 style="margin-left:1em";> ITEMS YOU HAVE SELECTED</h1>
 
-<img src="images/golgappe.jpg">
+<div style="padding-left: 30px;">
+<div>
+    <img src="images/golgappe.jpg" style="width:20%;">
+</div>
 Qty <br>
-!-- Quantity -->
+<!-- Quantity -->
 <div class="quantity-number-v2 clearfix">
     <div class="quantity-wrapper">
         <i class="add-down add-action fa fa-minus"></i>
+         <button type="button">-</button>
         <input id="prodQuantity" type="text" name="quantity" value="700" />
+        <button type="button">+</button>
+
         <i class="add-up add-action fa fa-plus"></i>
     </div>
     <div id="stock" class="text-center"></div>
@@ -42,6 +48,7 @@ Price <br>
 
 <br>
 <button class="place_order">PLACE ORDER</button>
+</div>
 
 </body>
 </html>
