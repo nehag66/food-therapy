@@ -27,17 +27,13 @@ if (!empty($_POST['username']) && !empty($_POST['password'])) {
         header("Location: index.php");
     }
 }
-?>
 
+?>
 <!DOCTYPE html>
 <html>
-<head>
-    <title></title>
-    <link rel="stylesheet" href="css/index.css">
-</head>
-<body background="images/wallpaper_final.jpg">
-<div>
-    <br>
+<?php include "header.php"?>
+<body>
+    <?php include 'navbar.php'?>
     <p style="text-align:center;"> <font size='32'>Foodie Therapy</font></p>
     <br>
     <br>
@@ -60,7 +56,5 @@ if (!empty($_POST['username']) && !empty($_POST['password'])) {
             <b> Don't have an account? <a href="signup.php">Sign up</a></b>
         </div>
     </div>
-</div>
-
 </body>
 </html>

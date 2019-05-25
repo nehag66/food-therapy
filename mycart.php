@@ -1,54 +1,108 @@
+<?php
+require_once('src/helpers/DbConnection.php');
+require_once('src/repository/ItemsRepository.php');
+// Starting session.
+session_start();
+
+// Checking if user is already loggedin
+$isLoggedIn = isset($_SESSION['username']) && is_string($_SESSION['username']);
+
+if ($isLoggedIn === false) {
+    header('Loction: index.php');
+    return;
+}
+
+$cartItems = ($isLoggedIn & isset($_SESSION['cart']) & !empty($_SESSION['cart'])) ? $_SESSION['cart'] : [];
+
+$obj = DbConnection::getNewConnectionObj();
+$itemsRepo = new ItemsRepository($obj->getConnection());
+
+$itemsInfo = $itemsRepo->getItemsDetail(array_keys($cartItems));
+
+?>
 <!DOCTYPE html>
 <html>
-<head>
-    <title></title>
-    <link rel="stylesheet" href="css/index.css">
-</head>
-<body background="images/wallpaper_final.jpg">
-<div>
-    <div class= "menu">
-        <div class= "leftmenu">
-            <h2>Foodie Therapy</h2>
+<?php include "header.php" ?>
+<body>
+    <?php include 'navbar.php' ?>
+    <br>
+    <br>
+    <h1 align="center"> REVIEW YOUR ORDER </h1> <br> <br>
+    <h1 style="margin-left:1em" ;> ITEMS YOU HAVE SELECTED</h1>
+
+
+    <div style="padding-left: 30px;">
+        <div>
+            <img src="images/golgappe.jpg" style="width:20%;">
         </div>
-        <div class="topnav">
-            <a href="index.php">HOME</a>
-            <a href="gallery.php">MENU</a>
-            <a href="mycart.php">MY CART</a>
-            <a href="about_page.php">ABOUT US</a>
-            <button class="signup"  onclick="location.href='login.php';">SignIn</button>
+        Qty <br>
+        <!-- Quantity -->
+        <div>
+            <button type="button">-</button>
+            <input id="prodQuantity" type="text" name="quantity" value="700"/>
+            <button type="button">+</button>
         </div>
+        <!-- /Quantity -->
+
+        Price <br>
+        24
+
+        <br>
+        <button class="place_order">PLACE ORDER</button>
     </div>
-</div>
-<br>
-<br>
-<h1 align="center"> REVIEW YOUR ORDER </h1> <br> <br>
-<h1 style="margin-left:1em";> ITEMS YOU HAVE SELECTED</h1>
 
-<div style="padding-left: 30px;">
-<div>
-    <img src="images/golgappe.jpg" style="width:20%;">
-</div>
-Qty <br>
-<!-- Quantity -->
-<div class="quantity-number-v2 clearfix">
-    <div class="quantity-wrapper">
-        <i class="add-down add-action fa fa-minus"></i>
-         <button type="button">-</button>
-        <input id="prodQuantity" type="text" name="quantity" value="700" />
-        <button type="button">+</button>
+    <?php
+    if (!empty($cartItems)) {
+        $noItems = count($cartItems);
 
-        <i class="add-up add-action fa fa-plus"></i>
-    </div>
-    <div id="stock" class="text-center"></div>
-</div>
-<!-- /Quantity -->
+        for ($key = 0; $key < $noItems; $key++) {
+            $item = $cartItems[$key];
 
-Price <br>
-24
+            $itemHtml = '';
+            if ((($key + 1) % 4) === 1) {
 
-<br>
-<button class="place_order">PLACE ORDER</button>
-</div>
+                $itemHtml .= '<div class="row">';
+            }
+
+            $itemHtml .=
+                "<div class=\"column\">
+                        <img src=\"".$item["image_url"]."\">
+                        <div>
+                            <b align = 'right'>".$item['name']."</b>
+                        </div>
+                        <div>
+                            <b align = 'right'>".$item['price']."</b>
+                        </div>"
+            ;
+
+            if (isset($cartItems[$item['id']])) {
+                $itemHtml .= "<a type=\"btn\" href='addtocart.php?item=".$item['id']."&qty=-1'>-</a>";
+                $itemHtml .= "<input type='number' value='".$cartItems[$item['id']]."' name ='qty_".$item['id'].
+                    "' min='0' max='3' style='width: 13%;' disabled = 'disabled'/>";
+                $itemHtml .= "<a type=\"btn\" href='addtocart.php?item=".$item['id']."&qty=1'>+</a>";
+            }
+
+            if ($isLoggedIn) {
+                $itemHtml .=
+                    "<div>
+                            <a type=\"btn\" href='addtocart.php?item=".$item['id']."&qty=1'>Add to cart</a>
+                        </div>";
+            } else {
+                $itemHtml .=
+                    "<div>
+                            <button type=\"button\" onclick='alert(\"SignIn to add to Cart\");'>Add to cart</button>
+                        </div>";
+            }
+
+            $itemHtml .= "</div>";
+            if ((($key + 1) % 4) === 0 || $noItems === ($key + 1)) {
+                $itemHtml .= "</div>";
+            }
+
+            echo $itemHtml;
+        }
+    }
+    ?>
 
 </body>
 </html>

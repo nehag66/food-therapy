@@ -51,4 +51,50 @@ class ItemsRepository extends BaseRepository
 
         return $items;
     }
+
+    /**
+     *  Function to get the item details
+     *
+     * @param array $itemIds
+     *
+     * @return array
+     */
+    public function getItemsDetail($itemIds)
+    {
+        if (empty($itemIds) || !is_array($itemIds)) {
+            return [];
+        }
+
+        $params = array();
+        $sql = 'SELECT id, item_name, price, quantity, image, category FROM items i';
+
+        if (!empty($category)) {
+            $sql .= ' WHERE id IN (?)';
+            array_push($params, implode(', ', $itemIds));
+        }
+
+        $query = $this->connection->prepare($sql);
+        $query->execute($params);
+        $query->setFetchMode(PDO::FETCH_ASSOC);
+
+        $items = array();
+
+        while ($record = $query->fetch()) {
+            $newItem = array(
+                'id' => $record['id'],
+                'name' => $record['item_name'],
+                'price' => $record['price'],
+                'quantity' => $record['quantity'],
+                'image_url' => $record['image'],
+                'category' => $record['category']
+            );
+            if (empty($items[$record['category']])) {
+                $items[$record['id']] = array();
+            }
+
+            array_push($items[$record['id']], $newItem);
+        }
+
+        return $items;
+    }
 }

@@ -1,22 +1,8 @@
 <html>
-<head>
-    <title></title>
-    <link rel="stylesheet" href="css/css/index.css">
-</head>
-<body background="images/images/wallpaper_final.jpg">
+<?php include "header.php"?>
+<body>
 <div>
-    <div class= "menu">
-        <div class= "leftmenu">
-            <h2>Foodie Therapy</h2>
-        </div>
-        <div class="topnav2">
-            <a href="index.php">HOME</a>
-            <a href="gallery.php">MENU</a>
-            <a href="mycart.php">MY CART</a>
-            <a href="about_page.php">ABOUT US</a>
-            <button class="signup"  onclick="location.href='login.php';">SignIn</button>
-        </div>
-    </div>
+    <?php include 'navbar.php'?>
     <font size=40>
         <p>We've been out there delighting you with quality food since 2018. And all that time we've been doing it our way, keeping true to the pioneering spirit of our founder. It means that our quality today is as consistent as it has always been and that we will continue to serve you the finest and tastiest food.</p>
         <hr>

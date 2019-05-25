@@ -8,7 +8,7 @@ body{
 }
 
 .bgimage{
-  background-image: url('wallpaper_final.jpg');
+  background-image: url('../images/wallpaper_final.jpg');
   background-size: 100% 100%;
 }
 
@@ -52,7 +52,7 @@ float: left;
 .text h3{
 	font-size: 52px;
    font-family: 'montserrat', sans-serif;
-   font-weight:700px;
+   font-weight: 700;
    margin: 14px  0px;
 
 }
@@ -106,7 +106,6 @@ float: left;
   border-radius: 25px;
 }
 
-<<<<<<< Updated upstream
 .slider{
   overflow: hidden;
   
@@ -265,7 +264,7 @@ float: left;
   float: left;
   color: #f2f2f2;
   position: relative;
-  top: 15;
+  top: 15px;
   border-radius: 5px;
   text-align: center;
   padding: 14px 16px;
@@ -311,8 +310,8 @@ float: left;
 .topnav .signup{
     float: right;
     position: relative;
-    top: 12;
-    right: 15; 
+    top: 12px;
+    right: 15px;
     border-radius: 5px;
     background-color: red;
     text-shadow: 2px 2px 2px black;
@@ -322,14 +321,6 @@ float: left;
   float: left;
   cursor: pointer;
 }
-
-
-
-
-
-
-
-
 
 .topnav2 {
   
@@ -389,8 +380,8 @@ float: left;
 .topnav2 .signup{
     float: right;
     position: relative;
-    top: 12;
-    right: 15; 
+    top: 12px;
+    right: 15px;
     border-radius: 5px;
     background-color: red;
     text-shadow: 2px 2px 2px black;
