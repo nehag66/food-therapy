@@ -26,7 +26,12 @@ $cartItems = ($isLoggedIn & isset($_SESSION['cart']) & !empty($_SESSION['cart'])
         <h4><u>FOOD CORNER</u></h4>
     </div>
     <div style="padding-right:10px;float: right;" class="topnav2">
-        <button type="button" class="signup" style="background-color: green;width: 100%" onclick="location.href='mycart.php'">Checkout Now</button>
+        <?php
+            if (true === $isLoggedIn) {
+                echo "<button type=\"button\" class=\"signup\" 
+style=\"background-color: green;width: 100%\" onclick=\"location.href='mycart.php'\">Checkout Now</button>";
+            }
+        ?>
     </div>
     <br><br>
     <br><br>

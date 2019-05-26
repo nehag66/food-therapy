@@ -393,15 +393,11 @@ float: left;
 }
 
 
-
-
-
-
 .box2{
   background-color: white;
   opacity: 0.5;
   width:500px;
-  height:600px;
+  height:800px;
   position: relative;
   margin-left: 30%;
   margin-right: 20%;
@@ -412,28 +408,3 @@ float: left;
   box-shadow: 0px 0px 20px 1px orangered;
   border-radius: 25px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

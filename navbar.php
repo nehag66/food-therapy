@@ -1,6 +1,4 @@
 <?php
-// Starting session.
-session_start();
 
 // Checking if user is already loggedin
 $isLoggedIn = isset($_SESSION['username']) && is_string($_SESSION['username']);

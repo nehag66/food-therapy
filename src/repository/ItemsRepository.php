@@ -66,12 +66,9 @@ class ItemsRepository extends BaseRepository
         }
 
         $params = array();
-        $sql = 'SELECT id, item_name, price, quantity, image, category FROM items i';
-
-        if (!empty($category)) {
-            $sql .= ' WHERE id IN (?)';
-            array_push($params, implode(', ', $itemIds));
-        }
+        $sql = 'SELECT id, item_name, price, quantity, image, category FROM items WHERE id IN ('.
+            implode(', ', $itemIds).')'
+        ;
 
         $query = $this->connection->prepare($sql);
         $query->execute($params);
@@ -80,7 +77,7 @@ class ItemsRepository extends BaseRepository
         $items = array();
 
         while ($record = $query->fetch()) {
-            $newItem = array(
+            $item = array(
                 'id' => $record['id'],
                 'name' => $record['item_name'],
                 'price' => $record['price'],
@@ -88,11 +85,8 @@ class ItemsRepository extends BaseRepository
                 'image_url' => $record['image'],
                 'category' => $record['category']
             );
-            if (empty($items[$record['category']])) {
-                $items[$record['id']] = array();
-            }
 
-            array_push($items[$record['id']], $newItem);
+            $items[$record['id']]=  $item;
         }
 
         return $items;

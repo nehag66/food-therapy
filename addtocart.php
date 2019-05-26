@@ -9,8 +9,10 @@ if (false === $isLoggedIn) {
     return;
 }
 
+$redirectLocation = (isset($_GET['from']) && $_GET['from'] === 'cart') ? 'mycart.php' : 'gallery.php';
+
 if (!isset($_GET['item']) || !isset($_GET['qty'])) {
-    header('Location: gallery.php');
+    header("Location: $redirectLocation");
 }
 
 $item = intval($_GET['item']);
@@ -21,7 +23,7 @@ $qtyToAdd =  $qty < -1 || $qty > 3 ? 1 : $qty;
 $currentQty = empty($_SESSION['cart'][$item]) ? 0 : $_SESSION['cart'][$item];
 
 if ((3 === $currentQty && $qtyToAdd > 0) || (0 === $currentQty && $qtyToAdd === -1)) {
-    header('Location: gallery.php');
+    header("Location: $redirectLocation");
 } else {
     $_SESSION['cart'][$item] = $currentQty + $qtyToAdd;
 
@@ -29,5 +31,5 @@ if ((3 === $currentQty && $qtyToAdd > 0) || (0 === $currentQty && $qtyToAdd === 
         unset($_SESSION['cart'][$item]);
     }
 
-    header('Location: gallery.php');
+    header("Location: $redirectLocation");
 }
