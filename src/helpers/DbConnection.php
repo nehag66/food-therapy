@@ -1,5 +1,6 @@
 <?php
-require_once('/../constants/Constants.php');
+
+require_once(__DIR__.'/../constants/Constants.php');
 
 class DbConnection
 {
@@ -23,7 +24,7 @@ class DbConnection
             Constants::DB_PASS
         );
 
-        return $obj;
+        return !empty($obj->connection) ? $obj : null;
     }
 
     /**
