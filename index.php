@@ -1,6 +1,5 @@
 <?php
-// Starting Session.
-session_start();
+session_start(); // Starting Session.
 ?>
 
 <!DOCTYPE html>
